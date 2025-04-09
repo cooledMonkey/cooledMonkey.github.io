@@ -1,0 +1,233 @@
+.circle {
+  width: 16vw; 
+  height: 16vw;
+  border-radius: 50%;
+  justify-content: center;
+  background-size: cover;
+}
+.circled_rect {
+  width: 10vw; 
+  height: 30vw;
+  background: #83A7C9;
+  border-radius: 20px;
+  flex:1;
+  margin:1vw;
+  background-size: cover;
+}
+body{
+  margin:0px
+}
+
+.cont{
+  margin-top:10px;
+  flex:1;
+  justify-content: center;
+  margin-left:10px;
+  margin-right:10px;
+  --border:3px solid #512064;
+}
+
+.cont_2{
+  margin-top:10px;
+  flex:0.5;
+  justify-content: center;
+  margin-left:10px;
+  margin-right:10px;
+  --border:3px solid #512064;
+}
+
+section > div{
+  display: inline-block
+}
+section > h4{
+  display: inline-flex
+}
+
+month_product{
+  display: inline-flex
+}
+
+.circled_rect_double {
+  width: 10vw; 
+  height: 60vw;
+  background: #83A7C9;
+  border-radius: 20px;
+  flex-grow:1;
+  margin:1vw
+}
+
+@media (max-width: 676px) { 
+.container_for_circ{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  background: linear-gradient(to top, white 55%, #512064 50%);
+  background-position:220px;
+  height:45vw;
+}
+h4 {
+  font-size: 12px;
+}
+#circle_4{ 
+  display:none;}
+#circle_5{ 
+  display:none;}
+#circ_text1{
+  display:none;}
+#circ_text2{
+  display:none;}
+.circle {
+  width: 25vw; 
+  height: 25vw;
+  border-radius: 50%;
+  justify-content: center;
+  background-size: cover;
+}
+.label_text{
+  color: white;
+  background-color: #5C5C5C;
+  align:center;
+  text-align:center;
+  font-size:15px;
+  width:100%;
+}
+}
+@media (min-width: 801px) { 
+.container_for_circ{
+  display:grid;
+  grid-template-columns: auto auto auto auto auto;
+  height:25vw;
+  background: linear-gradient(to top, white 55%, #512064 50%);
+  background-position:220px;
+}
+.label_text{
+  color: white;
+  background-color: #5C5C5C;
+  width:400px;
+  margin-left:0px;
+  align:center;
+  text-align:center;
+}
+}
+@media (min-width: 677px) and (max-width: 800px) { 
+.container_for_circ{
+  display:grid;
+  grid-template-columns: auto auto auto auto auto;
+  background: linear-gradient(to top, white 55%, #512064 50%);
+  background-position:220px;
+}
+.label_text{
+  color: white;
+  background-color: #5C5C5C;
+  width:400px;
+  margin-left:0px;
+  align:center;
+  text-align:center;
+}
+}
+
+
+
+
+h1{
+  color: #512064;
+  font-size:30px;
+  vertical-align:right;
+}
+
+.container{
+  display:flex;
+}
+
+.exp{
+  flex:1
+}
+
+.caterogy_label{
+  align:center;
+  text-align:center;
+  font-face:Zen Maru Gothic
+}
+
+.label_text_back{
+  margin-top:20px;
+  width:100%;
+  background: #512064;
+}
+
+.button{
+  width:200px;
+  height:60px;
+  background-color:#512064;
+  color:#FFFFFF;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  font-size:25px;
+}
+
+.center-both {
+  display: grid;
+  place-items: center;
+}
+
+.container_2{
+  display:flex;
+  justify-content: right;
+}
+
+
+
+#circle_1{ 
+  background-image:url("https://i.pinimg.com/originals/41/b4/20/41b42023db392a3488f74c49021a5561.jpg");
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+#circle_2{ 
+  background-image:url("https://i.pinimg.com/736x/95/33/60/9533604bb408cbdb45f1303c1f2477b8.jpg");
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+#circle_3{ 
+  background-image:url("https://i.pinimg.com/originals/9f/69/5c/9f695c2e7a060592ff4e251644155f5f.jpg");
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
+#circle_4{ 
+  background-image:url("https://cs5.livemaster.ru/storage/ff/82/785745b349ea4c4e39f9717f9fs7--suveniry-i-podarki-aromaticheskie-svechi-letnie-travy.jpg");
+  background-repeat:round;
+  grid-column-start: 4;
+  grid-column-end: 4;
+}
+#circle_5{ 
+  background-image:url("https://ae01.alicdn.com/kf/H8b0558e08a0d42d6a8604a5e34d06398Z.jpg");
+  grid-column-start: 4;
+  grid-column-end: 4;
+}
+#sale_1{
+  background-image:url("https://avatars.mds.yandex.net/i?id=a29be7f2f7116d79a70bbe2d939201a6_l-5312564-images-thumbs&n=13");
+}
+#sale_2{
+  background-image:url("https://artefacto.ru/img/work/article/a_75_668.jpeg");
+  background-repeat:round;
+}
+#sale_3{
+  background-image:url("https://i.pinimg.com/originals/a7/70/a5/a770a5e21d2737c9a845801cc371f458.jpg");
+}
+#month_1{
+  background-image:url("https://i.pinimg.com/736x/a1/cc/37/a1cc3736fe9df67c11effadc0939ff4a.jpg");
+}
+#month_2{
+  background-image:url("https://i.pinimg.com/736x/d1/5c/50/d15c50ec940f6c4fafb15964546cc068.jpg");
+}
+#month_3{
+  background-image:url("https://i.pinimg.com/736x/96/e9/73/96e97317279d306c5fe1d0fca58f2396.jpg");
+}
+#month_4{
+  background-image:url("https://i.pinimg.com/736x/50/2f/97/502f972fc7ac52bfcea17acfd8cce492.jpg");
+}
+#month_5{
+  background-image:url("https://i.pinimg.com/736x/99/d5/cf/99d5cfa21a80530e3082796f56fb6e8a.jpg");
+}
+#month_6{
+  background-image:url("https://avatars.mds.yandex.net/i?id=b7e196085b42529f3a23e45d404dc76f_l-5235567-images-thumbs&n=13");
+}
