@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<header>
+    <div class="header">
+        <h1 class="title">Список задач</h1>
+    </div>
+</header>
+<body class = "body">
+    <form class = "add-task-form">
+        <label class="add-task-form__label">Новая задача</label><br>
+        <input type = "text" value = "Название задачи..." class = "add-task-form__input">
+        <input type = "submit" value = "+ Добавить" class = "add-task-form__button">
+    </form>
+
+    <div class="table-header">
+        <div class="table-header__item table-header__backlog">Бэклог</div>
+        <div class="table-header__item table-header__pending">В процессе</div>
+        <div class="table-header__item table-header__completed">Готово</div>
+        <div class="table-header__item table-header__basket">Корзина</div>
+    </div>
+
+    <div class="table-tasks">
+        <div class = "table-tasks__item table-tasks__backlog">Выучить JS</div>
+        <div class = "table-tasks__item table-tasks__pending">Выпить смузи</div>
+        <div class = "table-tasks__item table-tasks__completed">Позвонить маме</div>
+        <div class = "table-tasks__item table-tasks__basket">Сходить погулять</div>
+        <div class = "table-tasks__item table-tasks__backlog">Выучить React</div>
+        <div class = "table-tasks__item table-tasks__pending">Попить воды</div>
+        <div class = "table-tasks__item table-tasks__completed">Погладить кота</div>
+        <div class = "table-tasks__item table-tasks__basket">Прочитать войну и мир</div>
+        <div id = "make-homework" class = "table-tasks__item table-tasks__backlog">Сделать домашку</div>
+        <button id = "clear-button" class = "table-tasks__clear-button">× Очистить</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
