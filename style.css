@@ -140,6 +140,10 @@
     margin-left: 4%;
 }
 
+.table-tasks__list{
+    padding-left: 0;
+}
+
 .table-tasks__item {
     font-family: sans-serif;
     width: 75%; 
@@ -149,6 +153,7 @@
     margin: 7px;
     padding: 10px;
     border-left: 5px solid;
+    list-style-type: none;
 }
 
 .table-tasks__backlog {
