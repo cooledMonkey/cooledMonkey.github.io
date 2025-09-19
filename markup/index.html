@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Морозова Ангелина Александровна</title>
+</head>
+<header class = "header">
+        <div class="header">
+        <h1 class="title">Список задач</h1>
+    </div>
+</header>
+<body class = "body">
+    <form class = "add-task-form">
+        <label class="add-task-form__label">Новая задача</label><br>
+        <input type = "text" value = "Название задачи..." class = "add-task-form__input">
+        <input type = "submit" value = "+ Добавить" class = "add-task-form__button">
+    </form>
+
+    <div class="table-header">
+        <div class="table-header__item table-header__backlog">Бэклог</div>
+        <div class="table-header__item table-header__pending">В процессе</div>
+        <div class="table-header__item table-header__completed">Готово</div>
+        <div class="table-header__item table-header__basket">Корзина</div>
+    </div>
+
+    <div class="table-tasks">
+        <ul class = "table-tasks__list">
+            <li class = "table-tasks__item table-tasks__backlog">Выучить JS</li>
+            <li class = "table-tasks__item table-tasks__backlog">Выучить React</li>
+            <li id = "make-homework" class = "table-tasks__item table-tasks__backlog">Сделать домашку</li>
+        </ul>
+        <ul class = "table-tasks__list">
+            <li class = "table-tasks__item table-tasks__pending">Выпить смузи</li>
+            <li class = "table-tasks__item table-tasks__pending">Попить воды</li>
+        </ul>
+        <ul class = "table-tasks__list">
+            <li class = "table-tasks__item table-tasks__completed">Позвонить маме</li>
+            <li class = "table-tasks__item table-tasks__completed">Погладить кота</li>
+        </ul>
+        <ul class = "table-tasks__list">
+            <li class = "table-tasks__item table-tasks__basket">Сходить погулять</li>
+            <li class = "table-tasks__item table-tasks__basket">Прочитать войну и мир</li>
+            <button id = "clear-button" class = "table-tasks__clear-button">× Очистить</button>
+        </ul> 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
