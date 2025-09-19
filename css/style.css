@@ -97,12 +97,12 @@
     color: #621911;
 }
 
-.table-header__completed {
+.table-header__done {
     background: #aef6b1;
     color: #116219;
 }
 
-.table-header__pending {
+.table-header__processing {
     background: #afe7fc;
     color: #113362;
 }
@@ -160,11 +160,11 @@
     border-color: #c2d1d6;
 }
 
-.table-tasks__pending {
+.table-tasks__processing {
     border-color: #afe7fc;
 }
 
-.table-tasks__completed {
+.table-tasks__done {
     border-color: #aef6b1
 }
 

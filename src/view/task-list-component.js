@@ -1,17 +1,22 @@
 import {createElement} from '../framework/render.js'; 
 
 
-function createHeaderComponentTemplate() {
+function createHeaderComponentTemplate(status, label) {
     return (
-        `
-        <section> <div class="table-header__item table-header__backlog">Бэклог</div></section>`
+        `<section> <div class="table-header__item table-header__${status}">${label}</div></section>`
       );
 }
 
 
 export default class TaskListComponent {
+
+    constructor({status, label}){
+        this.status = status;
+        this.label = label;
+    }
+
   getTemplate() {
-    return createHeaderComponentTemplate();
+    return createHeaderComponentTemplate(this.status, this.label);
   }
 
 
