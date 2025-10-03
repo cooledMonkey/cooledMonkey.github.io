@@ -4,20 +4,19 @@ import { AbstractComponent } from '../framework/view/abstract-component.js';
 
 function createHeaderComponentTemplate() {
     return (
-        `<div class="header">
-          <h1 class="title">Список задач</h1>
-        </div>`
-      );
+        `<li class = "table-tasks__plug">Перетащите карточку</li>`      
+    );
 }
 
 
-export default class HeaderComponent extends AbstractComponent {
+export default class PlugComponent extends AbstractComponent{
 
-  constructor(){
-    super();
-  }
+    constructor(){
+      super();
+    }
 
   get template(){
         return createHeaderComponentTemplate();
   }
+
 }
