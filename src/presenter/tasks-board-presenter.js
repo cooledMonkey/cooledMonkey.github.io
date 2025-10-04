@@ -24,6 +24,16 @@ export default class TaskBoardPresenter{
         this.#renderBoard();
     }
 
+    createTask(){
+        const taskTitle = document.querySelector('#add-task').value.trim();
+        if(!taskTitle){
+            return;
+        }
+        this.#tasksModel.addTask(taskTitle);
+
+        document.querySelector('#add-task').value = '';
+    }
+
     #filterByStatus(tasks, status){
         return tasks.filter(x => {
             return x.status == status;
