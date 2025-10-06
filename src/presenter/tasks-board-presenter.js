@@ -92,7 +92,6 @@ export default class TaskBoardPresenter{
     }
     #setButtonDisabled(){
         const tasksForStatus = this.#filterByStatus(this.tasks, 'basket');
-        console.log(tasksForStatus.length);
         if(tasksForStatus.length == 0){
             document.getElementById('clear-button').disabled = true;
         }
