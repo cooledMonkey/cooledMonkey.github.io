@@ -1,19 +1,19 @@
 export const tasks = [
-    // {
-    // id: "1",
-    // title: "Сходить в магаз",
-    // status: "backlog"
-    // },
-    //     {
-    // id: "2",
-    // title: "Пойти погулять",
-    // status: "backlog"
-    // },
-    //     {
-    // id: "3",
-    // title: "Выучить JS",
-    // status: "backlog"
-    // },
+    {
+    id: "1",
+    title: "Сходить в магаз",
+    status: "backlog"
+    },
+        {
+    id: "2",
+    title: "Пойти погулять",
+    status: "backlog"
+    },
+        {
+    id: "3",
+    title: "Выучить JS",
+    status: "backlog"
+    },
         {
     id: "4",
     title: "Проверить почту",

@@ -196,3 +196,10 @@
     margin: 7px;
     padding: 10px;
 }
+
+#clear-button:disabled,
+#clear-button[disabled]{
+      background: #4b2828;
+    border: #4b2828;
+    color: #8f8f8f;
+}
