@@ -65,7 +65,8 @@ export default class TaskBoardPresenter{
         render(this.#boardComponent, this.#boardContainer);
 
         Object.values(Status).forEach((status) => {
-            const taskListComponent = new TaskListComponent({status: status, label: StatusLabel[status]});
+            const taskListComponent = new TaskListComponent({status: status, label: StatusLabel[status], 
+                onTaskDrop: this.#handletaskDrop.bind(this)});
             render(taskListComponent, this.#boardComponent.element);
             const tasksForStatus = this.#filterByStatus(this.tasks, status);
             if(tasksForStatus.length == 0){
@@ -98,6 +99,9 @@ export default class TaskBoardPresenter{
         else{
             document.getElementById('clear-button').disabled = false;
         }
+    }
+    #handletaskDrop(taskId, newStatus){
+        this.#tasksModel.updateTaskStatus(taskId, newStatus);
     }
 }
 
