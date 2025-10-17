@@ -4,11 +4,14 @@ import { RenderPosition, render } from "./framework/render.js";
 import TaskBoardPresenter from './presenter/tasks-board-presenter.js';
 import TaskModel from './model/task-model.js'
 import ClearButtonComponent from './view/clear-button-component.js';
+import TasksApiService from './tasks-api-service.js';
+import LoadingViewComponent from './view/loading-view-component.js';
 
+const END_POINT = "https://68f21087b36f9750deeb4318.mockapi.io"
 const bodyContainer = document.querySelector('.header');
 const formContainer = document.querySelector('.add-task-section');
 const taskBoardContainer = document.querySelector(".table-task-section")
-const taskModel = new TaskModel();
+const taskModel = new TaskModel({tasksApiService: new TasksApiService(END_POINT)});
 
 const clearButton = new ClearButtonComponent({
   onClick: handleClearButtonClick

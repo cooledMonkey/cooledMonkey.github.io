@@ -203,3 +203,11 @@
     border: #4b2828;
     color: #8f8f8f;
 }
+
+#loading-view{
+    color: #1b75fc;
+    font-family: sans-serif;
+    font-size: 30pt;
+    display: flex;
+    justify-content: center;
+}

@@ -2,9 +2,10 @@ import TaskBoardComponent from '../view/task-board-component.js';
 import TaskListComponent from '../view/task-list-component.js';
 import TaskComponent from '../view/task-component.js';
 import { render } from "../framework/render.js";
-import {Status, StatusLabel} from '../const.js';
+import {Status, StatusLabel, UserAction} from '../const.js';
 import ClearButtonComponent from '../view/clear-button-component.js';
 import PlugComponent from '../view/plug-component.js';
+import LoadingViewComponent from '../view/loading-view-component.js';
 
 export default class TaskBoardPresenter{
     #boardComponent = new TaskBoardComponent();
@@ -22,20 +23,27 @@ export default class TaskBoardPresenter{
         this.#tasksModel.addObserver(this.#handleModelChange.bind(this));
     }
 
-    init(){
-        this.boardTasks = [...this.#tasksModel.tasks];
+    async init() {
+        const loadingViewComponent = new LoadingViewComponent();
+        render(loadingViewComponent, this.#boardContainer);
+        await this.#tasksModel.init();
+        this.#clearBoard();
         this.#renderBoard();
         this.#setButtonDisabled();
     }
 
-    createTask(){
+
+    async createTask(){
         const taskTitle = document.getElementById('add-task').value.trim();
         if(!taskTitle){
             return;
         }
-        this.#tasksModel.addTask(taskTitle);
-
-        document.getElementById('add-task').value = '';
+        try{
+            await this.#tasksModel.addTask(taskTitle);
+            document.getElementById('add-task').value = "";
+        } catch(err){
+            console.error('Ошибка при создании задачи: ', err)
+        }
     }
 
     clearBasket(){
@@ -87,6 +95,9 @@ export default class TaskBoardPresenter{
     }
     #clearBoard(){
         this.#boardComponent.element.innerHTML = '';
+        if(document.getElementById("loading-view") != null){
+            document.getElementById("loading-view").remove();
+        }
     }
     get tasks(){
         return this.#tasksModel.tasks;
@@ -100,8 +111,32 @@ export default class TaskBoardPresenter{
             document.getElementById('clear-button').disabled = false;
         }
     }
-    #handletaskDrop(taskId, newStatus){
-        this.#tasksModel.updateTaskStatus(taskId, newStatus);
+    async #handletaskDrop(taskId, newStatus){
+        try{
+            await this.#tasksModel.updateTaskStatus(taskId, newStatus);
+        } catch(err){
+            console.error('Ошибка при обновлении статуса задачи на сервере: ', err)
+        }
+        
+    }
+    #handleModelEvent(event, payload){
+        switch(event){
+            case UserAction.ADD_TASK:
+            case UserAction.UPDATE_TASK:
+            case UserAction.DELETE_TASK: 
+                this.#clearBoard();
+                this.#renderBoard();
+                this.#setButtonDisabled();
+                break;
+        }
+    }
+
+    async #handleClearBasketClick(){
+        try{
+            await this.#tasksModel.clearBucketModel();
+        } catch(err){
+            console.error('Ошибка при очистке корзины', err);
+        }
     }
 }
 
